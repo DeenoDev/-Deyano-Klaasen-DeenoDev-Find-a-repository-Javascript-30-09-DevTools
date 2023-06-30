@@ -71,6 +71,13 @@
     console.count('Steve');
 
     // timing
+    console.time('fetching date');
+    fetch('https://api.github.com/users/DeenoDev')
+       .then(data => data.json())
+       .then(data => {
+        console.timeEnd('fetching date');
+        console.log(data);
+       });
 
   </script>
 </body>
